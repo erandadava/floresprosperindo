@@ -12,7 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+Route::get('/golomori', function () {
+    return view('golomori');
+});
+Route::get('/tananaga', function () {
+    return view('tananaga');
 });
 
 
