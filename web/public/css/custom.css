@@ -29,7 +29,7 @@
 }
 
 .logo{
-    height: 64px;
+    height: 60px;
 }
 
 .logo-detail-page{
@@ -104,20 +104,20 @@ a:hover {
     95% { left: -300%; }
     100% { left: -400%; }
     }
-    
-    body { margin: 0; } 
+
+    body { margin: 0; }
     div#slider { overflow: ; }
     div#slider figure img { width: 20%; float: left; }
-    div#slider figure { 
+    div#slider figure {
       position: relative;
       width: 500%;
       margin: 0;
       left: 0;
       text-align: left;
       font-size: 0;
-      animation: 30s slidy infinite; 
+      animation: 30s slidy infinite;
     } */
-    
+
 /* Slider javascript */
 .cbp-fwslider {
 	position: relative;
@@ -218,7 +218,7 @@ a:hover {
 
 /* Carousel Section */
 .carousel {
-	margin-top: 80px;
+	margin-top: 0px;
 }
 
 .carousel-item {
@@ -249,8 +249,8 @@ a:hover {
 		text-align: center;
 	}
 }
-	
-/* Extra Small Devices, Phones */ 
+
+/* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
 	.fixed-top {
 		position: fixed;
@@ -304,14 +304,14 @@ a:hover {
   -ms-transform: translate(-50%, -50%);
 }
 
-.image_100 { 
+.image_100 {
     /* The image used */
 	width: 100% !important;
 	padding-top: 2em;
 }
 
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
 	.fixed-top {
 		position: fixed;
@@ -331,4 +331,8 @@ a:hover {
 
 #aboutus {
 	padding: 2rem;
+}
+
+.trsp{
+  background-color: #212121;
 }

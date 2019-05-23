@@ -15,6 +15,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/normalize.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/demo.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/linkstyles.css')}}" />
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
+
     <link rel="stylesheet" type="text/css" href="{{asset('css/custom.css')}}" />
     <style>
 
@@ -32,7 +35,8 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    @include('navbar')
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index.html"><img class="logo" src="img/logo-prosperindo-white.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,115 +62,124 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> -->
 
     <header>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-          <div class="carousel-item active" style="background-image: url('img/land-of-the-dragon.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <!-- <h3>First Slide</h3>
-              <p>This is a description for the first slide.</p> -->
-            </div>
-          </div>
-          <div class="carousel-item" style="background-image: url('img/komodo-island.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <!-- <h3>Second Slide</h3>
-              <p>This is a description for the second slide.</p> -->
-            </div>
-          </div>
-          <div class="carousel-item" style="background-image: url('img/padar-island.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <!-- <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p> -->
-            </div>
-          </div>
-          <div class="carousel-item" style="background-image: url('img/diving-and-snorkeling.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <!-- <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p> -->
-            </div>
-          </div>
-          <div class="carousel-item" style="background-image: url('img/kelimutu-crater-lakes.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <!-- <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p> -->
-            </div>
-          </div>
-          <div class="carousel-item" style="background-image: url('img/lamalera-whaling-village.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <!-- <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p> -->
-            </div>
-          </div>
-          <div class="carousel-item" style="background-image: url('img/wae-rebo.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <!-- <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p> -->
-            </div>
-          </div>
-          <div class="carousel-item" style="background-image: url('img/caci-dance.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <!-- <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p> -->
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </header>
+      <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: push;autoplay: true">
 
+        <ul class="uk-slideshow-items">
+            <li>
+                <div class="uk-position-cover" uk-slideshow-parallax="scale: 1.2,1.2,1">
+                    <img src="{{asset('img/land-of-the-dragon.jpg')}}" alt="" uk-cover>
+                </div>
+                <div class="uk-position-cover" uk-slideshow-parallax="opacity: 0,0,0.2; backgroundColor: #000,#000"></div>
+            </li>
+            <li>
+                <div class="uk-position-cover" uk-slideshow-parallax="scale: 1.2,1.2,1">
+                    <img src="{{asset('img/komodo-island.jpg')}}" alt="" uk-cover>
+                </div>
+                <div class="uk-position-cover" uk-slideshow-parallax="opacity: 0,0,0.2; backgroundColor: #000,#000"></div>
+            </li>
+            <li>
+                <div class="uk-position-cover" uk-slideshow-parallax="scale: 1.2,1.2,1">
+                    <img src="{{asset('img/diving-and-snorkeling.jpg')}}" alt="" uk-cover>
+                </div>
+                <div class="uk-position-cover" uk-slideshow-parallax="opacity: 0,0,0.2; backgroundColor: #000,#000"></div>
+            </li>
+        </ul>
+
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+    </div>
+
+    </header>
+    <div class="div-about uk-margin-large-top uk-margin-large-bottom">
+      <div class="uk-flex-middle uk-flex-center" uk-grid>
+          <center>
+            <div class="uk-width uk-flex-first">
+                <img src="{{asset('img/logo-prosperindo.png')}}" alt="Image">
+            </div>
+            </center>
+            <div class="uk-width">
+              <!-- <h1>About Us</h1> -->
+              <article class="uk-article" style="padding-left:5%;padding-right:5%;">
+                <p class="uk-text-lead uk-margin-medium-top uk-text-center@m">Flores Prosperindo (FP) is an Indonesian real estate
+                    developer, focused in creating eco-tourism destination
+                    for living and adventures in the island of Flores.</p>
+                <p class="uk-text-center@m">FP strives to develop new sustainable world class tourism
+                    destination, integrated with strategic planning to synergize
+                    among hospitality, creativity, technology, health, edu-
+                    cation and enterprise.</p>
+                <center>
+                  <h6 class="uk-text-large">Property - Properly - Prosperity</h6>
+                </center>
+              </article>
+            </div>
+
+      </div>
+    </div>
+    <hr class="uk-divider-icon">
+    <div class="div-konten-wisata">
+      <div class="uk-padding-small uk-margin-medium-top uk-margin-small-bottom">
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-box-shadow-small uk-flex-middle"  uk-grid>
+            <div class="uk-card-media-left uk-cover-container">
+              <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-flex uk-flex-top" uk-parallax="bgy: -200" style="background-image: url('img/new-tana-naga.jpg');">
+                <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+                    <h1 uk-parallax="opacity: 0,1,1; y: -100,0,0; x: 100,100,0; scale: 2,1,1; viewport: 0.5;" class="uk-heading-medium" style="color:white;text-shadow: 2px 2px #9E9E9E;">TanaNaga</h1>
+                    <p uk-parallax="opacity: 0,1,1; y: 100,0,0; x: -100,-100,0; scale: 0.5,1,1; viewport: 0.5;"><button class="uk-button uk-button-secondary uk-button-large">SEE DETAIL PROJECT</button></p>
+                </div>
+              </div>
+            </div>
+            <div>
+                <div class="uk-card-body">
+                  <article class="uk-article">
+                        <p class="uk-article-meta">TanaNaga Supported by The Tourism Ministry</p>
+
+                        <p class="uk-text-lead">
+                          Tourism area that will be developed has an area of approximately 1000Ha, located on the edge of the southern island of Flores and has a beach line with a length of approximately 10Km.
+                        </p>
+
+                      </article>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="uk-padding-small uk-margin-medium-top uk-margin-small-bottom">
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-box-shadow-small uk-flex-middle"  uk-grid>
+            <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+              <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-flex uk-flex-top" uk-parallax="bgy: -200" style="background-image: url('img/new-bukit-cinta.jpg');">
+                <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+                    <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;" class="uk-heading-medium" style="color:white;text-shadow: 2px 2px #9E9E9E;">GoloMori</h1>
+                    <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;"><button class="uk-button uk-button-secondary uk-button-large">SEE DETAIL PROJECT</button></p>
+                </div>
+              </div>
+            </div>
+            <div>
+                <div class="uk-card-body">
+                  <article class="uk-article">
+                        <p class="uk-article-meta">GoloMori Supported by The Tourism Ministry</p>
+                        <p class="uk-text-lead">
+                          GoloMori with beautiful and amazing view direct to Rinca Island will be develop as New Religious Ethnic Destination & Exclusive Residence. Supporting with Public Arts & Cultures especially for Flores Cultural that can be a New location to celebrate festive events.
+                        </p>
+                      </article>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="uk-child-width" uk-grid uk-scrollspy="cls: uk-animation-slide-bottom; target: .gb-support; delay: 100; repeat: true">
+    <div>
+      <div class="uk-margin-large-top uk-margin-large-bottom gb-support">
+          <img class="image_100" src="{{asset('img/SUPPORT.png')}}" alt="...">
+      </div>
+    </div>
+</div>
     <a href="https://www.google.co.id/maps/place/Stairway+To+Heaven+(Labuan+Bajo)/@-8.4663004,119.8798516,828m/data=!3m1!1e3!4m12!1m6!3m5!1s0x0:0xc0ff3e4936f3ee9f!2sStairway+To+Heaven+(Labuan+Bajo)!8m2!3d-8.4666824!4d119.8830381!3m4!1s0x0:0xc0ff3e4936f3ee9f!8m2!3d-8.4666824!4d119.8830381" target="_BLANK">
     <div class="grid__item color-4">
     </div>
-	</a>
-
-    <!-- Page Content -->
-    <section class="py-5 bg-gray" id="aboutus">
-      <div class="container text-center border-about">
-        <img class="logo-about" src="{{asset('img/logo-prosperindo-white.png')}}">
-        <div style="padding: 18px;"></div>
-        <!-- <h1>About Us</h1> -->
-        <p>Flores Prosperindo (FP) is an Indonesian real estate
-            developer, focused in creating eco-tourism destination
-            for living and adventures in the island of Flores.</p>
-        <p>FP strives to develop new sustainable world class tourism
-            destination, integrated with strategic planning to synergize
-            among hospitality, creativity, technology, health, edu-
-            cation and enterprise.</p>
-        <h4>Property - Properly - Prosperity</h4>
-      </div>
-    </section>
-        <div class="grid__item color-3 " id="tananaga">
-        <a href="tana-naga.html" style="border: 2px solid white; border-radius:5px; padding:1rem;" class="link link--surinami" href="#"><span data-letters-l="Tana" data-letters-r="Naga" data-letters-t="test">Tana<br>Naga</span><hr class="hr-separator"><div class="link--surinami-sub">Concept</div></a>
-				<a href="tana-naga.html" class="view-detail">SEE DETAIL PROJECT</a>
-			</div>
-			<div class="grid__item color-2" id="golomori">
-        <a href="golo-mori.html" style="border: 2px solid white; border-radius:5px; padding:1rem;" class="link link--surinami" href="#"><span data-letters-l="Golo" data-letters-r="Mori" data-letters-t="test">Golo</br>Mori</span><hr class="hr-separator"><div class="link--surinami-sub">Lifestyle</div></a>
-				<a href="golo-mori.html" class="view-detail">SEE DETAIL PROJECT</a>
-			</div>
-
-			<div class="grid__item color-6">
-        <!-- Section Profil -->
-      </div>
-    </div>
+	 </a>
     <div class="bg-gray">
       <div class="container">
           <div class="padding-3"></div>
@@ -221,9 +234,7 @@
         </div>
         <div class="padding-2"></div>
       </div>
-      <div class="col-xs-12">
-        <img class="image_100" src="{{asset('img/SUPPORT.png')}}" alt="...">
-    </div>
+
       <!-- Footer -->
       <footer class="py-5 bg-gray">
         <div class="container">
@@ -236,7 +247,9 @@
     <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('vendor/popper/popper.min.js')}}"></script>
     <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
   </body>
 
 </html>
